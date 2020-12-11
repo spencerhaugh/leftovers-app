@@ -1,6 +1,7 @@
 from flask import Flask, jsonify, g
 import pymongo
 from pymongo import MongoClient
+from flask_mongoengine import MongoEngine
 from mongoengine import *
 
 
@@ -10,41 +11,37 @@ DEBUG = True
 PORT = 8000
 
 app = Flask(__name__)
+##########
+# DB Connection via MongoEngine (aka Express in express/Node)
+db = MongoEngine(app)
 
-# MongoDB Connection
+# MongoDB Connection route to users collection
 client = MongoClient()
-db = client.leftovers
+db = client["leftovers-app"]
 users = db.users
 
 # # TEST CONNECTION: INSERT TEST USER
-# user_data = {
-#     'username': 'Test User',
-#     'email': 'test@testy.com'
-# }
-# result = users.insert_one(user_data)
-# print('Data from: {0}'.format(result.inserted_id))
+user_data = {
+    'username': 'Another User',
+    'email': 'again@testy.com'
+}
+result = users.insert_one(user_data)
+print('Data from: {0}'.format(result.inserted_id))
+
+
+
+
+
+
+
+
 
 
 # DEFAULT ROUTE
 # The default URL ends in /
 @app.route('/')
 def index():
-    return 'Welcome!'
-
-
-
-##############
-# TESTING ROUTES
-##############
-
-# Example: Return json (need to import jsonify on line 1 above) 
-@app.route('/json')
-def dog():
-    return jsonify(name="Virus", age=12)
-# Example: Return variable/dynamic data(express was :id) with < carrots > go to /sayhi/spencer
-@app.route('/sayhi/<username>')
-def hello(username):
-    return "Hello, {}".format(username)
+    return 'Welcome to leftovers app!'
 
 
 
