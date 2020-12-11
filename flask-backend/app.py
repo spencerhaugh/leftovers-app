@@ -1,9 +1,6 @@
 from flask import Flask, jsonify, g
 import pymongo
 from pymongo import MongoClient
-from flask_mongoengine import MongoEngine
-from mongoengine import *
-
 
 # import models
 
@@ -11,29 +8,15 @@ DEBUG = True
 PORT = 8000
 
 app = Flask(__name__)
-##########
-# DB Connection via MongoEngine (aka Express in express/Node)
-db = MongoEngine(app)
+
+
+
 
 # MongoDB Connection route to users collection
 client = MongoClient()
 db = client["leftovers-app"]
 users = db.users
-
-# # TEST CONNECTION: INSERT TEST USER
-user_data = {
-    'username': 'Another User',
-    'email': 'again@testy.com'
-}
-result = users.insert_one(user_data)
-print('Data from: {0}'.format(result.inserted_id))
-
-
-
-
-
-
-
+print(users)
 
 
 
@@ -41,6 +24,19 @@ print('Data from: {0}'.format(result.inserted_id))
 # The default URL ends in /
 @app.route('/')
 def index():
+
+
+    # # TEST CONNECTION: INSERT TEST USER
+    # working and connected to DB
+    # next step: receive form data from front-end and save to variable user_data as in below example
+    user_data = {
+    'username': 'Bens User',
+    'email': 'newguy@testy.com'
+    }
+    result = users.insert_one(user_data)
+    print('Data from: {0}'.format(result.inserted_id))
+
+
     return 'Welcome to leftovers app!'
 
 

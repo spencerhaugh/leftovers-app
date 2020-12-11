@@ -1,8 +1,11 @@
+from mongoengine import *
+
+class User(Document):
+    username = StringField(required=True)
+    email = StringField(required=True)
+    recipes = ListField()
 
 
-class User(db.Document):
-    username = db.StringField(required=True, unique=True)
-    email = db.StringField(required=True, unique=True)
 
 
 
