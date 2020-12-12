@@ -33,7 +33,7 @@ def index():
     # next step: receive form data from front-end and save payload to variable user_data
     user_data = {
     'username': 'Bens User',
-    'email': 'newguy@testy.com'
+    'email': 'newguy@testy.com',
     'password': '12345'
     }
     result = users.insert_one(user_data)
