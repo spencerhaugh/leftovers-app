@@ -1,11 +1,11 @@
 <template>
   <div class="about">
-    <h1>LEFTOVERS:</h1>
+    <h1>Let's Get Spicy!</h1>
     <img alt="App logo" src="../assets/logo.png">
-    <h2>Let's Get Spicy!</h2>
+  
     <div class='about-text about'>
       <p>In need of a meal, but out of ideas? Let us spice things up!</p>
-      <p>LEFTOVERS works with what you've got on hand, and gives you meal ideas you can actually work with.</p>
+      <p>LEFTOVERS works with what you have on hand, and provides meal ideas you can actually work with.</p>
       <p>Just tell us you main ingredient, and we'll give you dozens of ideas! Favorite the ones you love, and ditch the ones you aren't feeling. Circle back to your favorites in your profile page. Easy as that!</p>
     </div>
     <div>
@@ -31,6 +31,13 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+  .about-text {
+    background-color: cadetblue;
+    color: cornsilk;
+    padding: 2%;
+    margin-bottom: 2%;
+    width: 60%;
   }
   img {
     max-width: 300px;

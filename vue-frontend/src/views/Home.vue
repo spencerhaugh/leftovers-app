@@ -1,7 +1,8 @@
 <template>
   <div class="home">
+    <h1>Welcome to Leftovers!</h1>
     <img alt="App logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Leftovers!"/>
+    <HelloWorld msg=""/>
   </div>
 </template>
 
@@ -22,5 +23,8 @@ export default {
     max-width: 300px;
     width: 30%;
     margin: 5%;
+    }
+    h1 {
+      margin-top: 3%;
     }
 </style>
