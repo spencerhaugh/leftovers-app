@@ -1,6 +1,6 @@
 <template>
     <div class='ingredient'>
-        <h4>I Need Some Meal Ideas! I've Got Some: </h4>
+        <h4>Need Some Meal Ideas??</h4>
         <form>
             <input type="text" placeholder="What have you got?">
             <input type="submit"></form>

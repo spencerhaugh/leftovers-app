@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <img alt="App logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to the Spicy Boi App"/>
+    <HelloWorld msg="Welcome to Leftovers!"/>
   </div>
 </template>
 
@@ -16,3 +16,11 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+  img {
+    max-width: 300px;
+    width: 30%;
+    margin: 5%;
+    }
+</style>

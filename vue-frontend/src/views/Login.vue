@@ -4,8 +4,6 @@
             <label for="username" />
                 <input type="text" id="username" placeholder="Username">
             <label for="email" />
-                <input type="email" id="email" placeholder="Email">
-            <label for="password" />
                 <input type="password" id="password" placeholder="Password">
             <button type='submit' class='btn btn-outline-danger'>Login</button>
         </form>
@@ -25,7 +23,7 @@ export default {
     },
     data() {
         return {
-            text: "This is Login Text return defined in Login.vue"
+            text: "Need an account? Sign up for free!"
         };
     },
     methods: {

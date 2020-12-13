@@ -1,6 +1,6 @@
 <template>
     <div class='container'>
-        <form>
+        <form class='signup-form'>
             <label for="username" />
                 <input type="text" id="username" placeholder="Username">
             <label for="email" />
@@ -24,7 +24,7 @@ export default {
     },
     data() {
         return {
-            text: "This is Signup Text return defined in Signup.vue"
+            text: "This is the first step to ending world hangery."
         };
     },
     // methods: {
@@ -47,7 +47,21 @@ export default {
 
 <style scoped>
 button {
-    margin-right: 5px;
-    margin-left: 5px;
+    width: 30%;
+    margin-bottom: 3%;
+}
+input {
+    padding: 1%;
+    margin-bottom: 1%;
+    width: 30%;
+}
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    width: 60%;
+    margin: 0 auto;
 }
 </style>
