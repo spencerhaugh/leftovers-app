@@ -7,7 +7,7 @@
                 <input type="email" id="email" placeholder="Email">
             <label for="password" />
                 <input type="password" id="password" placeholder="Password">
-            <button type='submit' class='btn btn-outline-danger'>Login</button>
+            <button type='submit' class='btn btn-outline-warning'>Signup</button>
         </form>
         
         <p>{{ text }}</p>
@@ -18,13 +18,13 @@
 <script>
 
 export default {
-    name: 'Login',
+    name: 'Signup',
     props: {
         msg: String
     },
     data() {
         return {
-            text: "This is Login Text return defined in Login.vue"
+            text: "This is Signup Text return defined in Signup.vue"
         };
     },
     // methods: {
