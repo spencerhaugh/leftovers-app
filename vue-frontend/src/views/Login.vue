@@ -16,6 +16,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 
 export default {
     name: 'Login',
@@ -27,21 +28,21 @@ export default {
             text: "This is Login Text return defined in Login.vue"
         };
     },
-    // methods: {
-    //     getMessage() {
-    //         const path = 'http://localhost:8000/ping';
-    //         axios.get(path)
-    //         .then((res) => {
-    //             this.msg = res.data;
-    //         })
-    //         .catch((error) => {
-    //             console.error(error);
-    //         });
-    //     },
-    // },
-    // created() {
-    //     this.getMessage();
-    // },
+    methods: {
+        loginUser() {
+            const path = 'http://localhost:3003/users/login';
+            axios.get(path)
+            .then((res) => {
+                this.msg = res.data;
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+        },
+    },
+    created() {
+        this.getMessage();
+    },
 };
 </script>
 

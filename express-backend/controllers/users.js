@@ -9,6 +9,8 @@ const User = require('../models/user.js')
 
 //ROUTES
 
+
+
 // Create New User
 users.post('/new', (req, res) => {
   console.log('Create user button clicked!');
@@ -46,7 +48,7 @@ users.put('/update', (req, res) => {
 })
 
 // Delete User
-users.delete('/delete', verifyToken, (req, res) => {
+users.delete('/delete', (req, res) => {
   User.findByIdAndRemove(userData.user.id, (err, deletedUser) => {
     if (err) {
       res.status(400).json({
