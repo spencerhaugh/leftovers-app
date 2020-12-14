@@ -12,7 +12,7 @@ const User = require('../models/user.js')
 
 
 // Create New User
-users.post('/new', (req, res) => {
+users.post('/', (req, res) => {
   console.log('Create user button clicked!');
   // have bcrypt hash the password and overwrite user entry to pass into db
   req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10))
@@ -30,7 +30,7 @@ users.post('/new', (req, res) => {
 });
 
 // Edit User
-users.put('/update', (req, res) => {
+users.put('/:id', (req, res) => {
   req.body.password = req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10))
   User.findByIdAndUpdate(user.user.id, req.body, (err, userToUpdate) => {
     if (err) {
@@ -48,7 +48,7 @@ users.put('/update', (req, res) => {
 })
 
 // Delete User
-users.delete('/delete', (req, res) => {
+users.delete('/:id', (req, res) => {
   User.findByIdAndRemove(userData.user.id, (err, deletedUser) => {
     if (err) {
       res.status(400).json({

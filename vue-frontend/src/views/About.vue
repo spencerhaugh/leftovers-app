@@ -46,6 +46,7 @@ export default {
     }
     h1 {
       margin-top: 3%;
+      font-family: Dagsen_Inked, Helvetica, Arial;
     }
     h2 {
       margin-bottom: 3%;
