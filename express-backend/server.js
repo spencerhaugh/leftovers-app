@@ -6,9 +6,10 @@ const app = express();
 const cors = require('cors')
 
 // Config
-// require('dotenv').config();
+require('dotenv').config();
 const PORT = process.env.PORT || 3003
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/leftovers-app'
+
 
 // const whitelist = ['http://localhost:3000', 'https://farm-stan-client.herokuapp.com/']
 // const corsOptions = {

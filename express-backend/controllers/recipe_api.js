@@ -3,6 +3,7 @@
 
 // module.exports = recipe_api
 
+// require('dotenv').config()
 const baseURL = 'https://api.spoonacular.com/recipes/findByIngredients?ingredients='
 // const apiKey = 'e30a8201eca9495785674b0937477c7f'
 const apiKey = process.env.API_KEY || 'e30a8201eca9495785674b0937477c7f'
