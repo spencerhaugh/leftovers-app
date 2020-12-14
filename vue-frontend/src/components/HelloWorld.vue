@@ -3,7 +3,7 @@
     <h1>{{ msg }}</h1>
     <Ingredient />
     <p>
-      Matching hangry people with great food
+      Matching hangry people with great meals since 2020!
     </p>
   </div>
 </template>

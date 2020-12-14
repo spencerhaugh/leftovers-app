@@ -1,6 +1,7 @@
 <template>
     <div class='ingredient'>
-        <h4>Need Some Meal Ideas??</h4>
+        <h4>Enter a main ingredient, get meal suggestions</h4>
+        <!-- <h5>Enter a main ingredient, get suggestions</h5> -->
         <form>
             <input type="text" placeholder="What have you got?">
             <input type="submit"></form>

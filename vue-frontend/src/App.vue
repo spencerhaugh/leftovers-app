@@ -11,6 +11,17 @@
 </template>
 
 <style>
+@font-face {
+      font-family: "Dagsen_Inked";
+      src: local("Dagsen_Inked"),
+      url(./fonts/Dagsen_Inked.otf) format("opentype")
+    }
+@font-face {
+      font-family: "big_noodle_titling";
+      src: local("big_noodle_titling"),
+      url(./fonts/big_noodle_titling.ttf) format("truetype")
+    }
+    /* Font import tips researched from https://reactgo.com/add-fonts-vue-app/ */
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -31,4 +42,5 @@
 #nav a.router-link-exact-active {
   color: #42b983;
 }
+
 </style>
