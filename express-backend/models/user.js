@@ -9,7 +9,7 @@ const userSchema = mongoose.Schema({
   },
   password: {
     type: String,
-    required: true
+    // required: true
   },
   displayName: {
     type: String,
@@ -17,7 +17,7 @@ const userSchema = mongoose.Schema({
     unique: true
   },
   recipes: {
-    type: [Schema.Types.Mixed]
+    type: [mongoose.Schema.Types.Mixed]
   }
 })
 
