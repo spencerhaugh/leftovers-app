@@ -51,19 +51,20 @@ users.put('/:id', (req, res) => {
 })
 
 // Delete User
-// users.delete('/:id', (req, res) => {
-//   User.findByIdAndRemove(userData.user.id, (err, deletedUser) => {
-//     if (err) {
-//       res.status(400).json({
-//         error: err
-//       })
-//     } else {
-//       res.status(200).json({
-//         deletedUser
-//       })
-//     }
-//   })
-// })
+// Checked and working in Postman
+users.delete('/:id', (req, res) => {
+  User.findByIdAndRemove(req.params.id, (err, deletedUser) => {
+    if (err) {
+      res.status(400).json({
+        error: err.message
+      })
+    } else {
+      res.status(200).json({
+        deletedUser
+      })
+    }
+  })
+})
 
 
 
