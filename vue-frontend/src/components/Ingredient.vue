@@ -4,7 +4,7 @@
         <!-- <h5>Enter a main ingredient, get suggestions</h5> -->
         <form>
             <input type="text" placeholder="What have you got?">
-            <input type="submit"></form>
+            <input type="submit" v-on="search"></form>
     </div>
 </template>
 

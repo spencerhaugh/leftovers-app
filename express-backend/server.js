@@ -2,14 +2,13 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
-const session = require('express-session');
 
 // const cors = require('cors');
 
 // Config
 require('dotenv').config();
-const PORT = process.env.PORT || 3003
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/leftovers-app'
+const PORT = process.env.PORT 
+const MONGODB_URI = process.env.MONGODB_URI 
 
 
 // const whitelist = ['http://localhost:3003', 'http://localhost:8080']
@@ -30,13 +29,7 @@ app.use(express.static('public'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
     // Sessions
-app.use(
-  session({
-    secret: process.env.SECRET, //a random string do not copy this value or your stuff will get hacked
-    resave: false, // default more info: https://www.npmjs.com/package/express-session#resave
-    saveUninitialized: false // default  more info: https://www.npmjs.com/package/express-session#resave
-  })
-);
+
 
 // Database Connection
 mongoose.connect(MONGODB_URI, {

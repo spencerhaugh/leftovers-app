@@ -1,10 +1,10 @@
 // Dependencies
-const express = require('express')
-const mongoose = require('mongoose')
-const bcrypt = require('bcrypt')
-const users = express.Router()
-const User = require('../models/user.js')
-
+const express = require('express');
+const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
+const users = express.Router();
+const User = require('../models/user.js');
+const jwt = require('jsonwebtoken');
 
 
 //CRUD ROUTES
@@ -49,6 +49,7 @@ users.post('/', (req, res) => {
 // Edit User
 // Checked and working in Postman
 users.put('/:id', (req, res) => {
+  
   req.body.password = req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10))
   User.findByIdAndUpdate(req.params.id, req.body, (err, userToUpdate) => {
     if (err) {
@@ -86,7 +87,50 @@ users.delete('/:id', (req, res) => {
 // RECIPES
 // ===========
 
+// ===========
+// LOGIN - LOGOUT
+// ===========
 
+users.post('/login', (req, res) => {
+  // mock user data
+  const user = {
+    id: 1,
+    username: "Spencer"
+  } 
+  jwt.sign({user: user}, 'secretkey', (err, token) => { // secret key will change to: process.env.TOKEN_SECRET
+    res.json({
+      token: token
+    })
+  })
+})
+
+// ======================
+// JWT SETUP / MIDDLEWARE
+// ======================
+
+// Format of Token:
+// Authorization: Bearer <access_token>
+
+// Verify Token Function:
+function verifyToken(req, res, next) {
+  // Geet auth header value
+  const bearerHeader = req.headers['authorization'];
+  // Check if bearer is undefined
+  if(typeof bearerHeader !== 'undefined') {
+    // Split at space
+    const bearer = bearerHeader.split(' ');
+    // Get token from Array
+    const bearerToken = bearer[1];
+    // Set Token
+    req.token = bearerToken
+    // Next middleware
+    next();
+  } else {
+    // forbidden
+    res.sendStatus(403)
+  }
+
+};
 
 
 module.exports = users;
