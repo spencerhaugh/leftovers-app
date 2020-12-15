@@ -11,17 +11,17 @@ const PORT = process.env.PORT || 3003
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/leftovers-app'
 
 
-// const whitelist = ['http://localhost:3000', 'https://farm-stan-client.herokuapp.com/']
-// const corsOptions = {
-//     origin: function (origin, callback) {
-//         if (whitelist.includes(origin)) {
-//             callback(null, true)
-//         } else {
-//             callback(new Error('Not allowed by CORS'))
-//         }
-//     }
-// }
-// app.use(cors(corsOptions))
+const whitelist = ['http://localhost:3003', 'https://mystifying-mccarthy-7142e6.netlify.app/']
+const corsOptions = {
+    origin: function (origin, callback) {
+        if (whitelist.includes(origin)) {
+            callback(null, true)
+        } else {
+            callback(new Error('Not allowed by CORS'))
+        }
+    }
+}
+app.use(cors(corsOptions))
 
 
 // Middleware
