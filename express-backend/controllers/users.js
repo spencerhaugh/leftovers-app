@@ -107,6 +107,10 @@ users.post('/login', (req, res) => {
 // ======================
 // JWT SETUP / MIDDLEWARE
 // ======================
+    // Researched via:
+        // User: Brad Traversy
+        // https://github.com/bradtraversy/node_jwt_example/blob/master/app.js
+        // https://www.youtube.com/watch?v=7nafaH9SddU
 
 // Format of Token:
 // Authorization: Bearer <access_token>

@@ -39,10 +39,7 @@ export default {
                 console.error(error);
             });
         },
-    },
-    created() {
-        this.getMessage();
-    },
+    }
 };
 </script>
 
