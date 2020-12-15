@@ -1,12 +1,12 @@
 <template>
     <div class='container'>
-        <form class='signup-form'>
+        <form class='signup-form' @submit="createUser">
             <label for="username" />
-                <input type="text" id="username" placeholder="Username">
+                <input type="text" v-model="username" id="username" placeholder="Username">
             <label for="email" />
-                <input type="email" id="email" placeholder="Email">
+                <input type="email" v-model="email" id="email" placeholder="Email">
             <label for="password" />
-                <input type="password" id="password" placeholder="Password">
+                <input type="password" v-model="password" id="password" placeholder="Password">
             <button type='submit' class='btn btn-outline-warning'>Signup</button>
         </form>
         
@@ -24,24 +24,25 @@ export default {
     },
     data() {
         return {
-            text: "This is the first step to ending world hangery."
-        };
+            text: "This is the first step to ending world hangery.",
+            username: '',
+            password: '',
+            email: ''
+        }
     },
     // methods: {
-    //     getMessage() {
-    //         const path = 'http://localhost:8000/ping';
-    //         axios.get(path)
+    //     createUser() {
+    //         axios.post()
     //         .then((res) => {
     //             this.msg = res.data;
     //         })
     //         .catch((error) => {
     //             console.error(error);
     //         });
-    //     },
-    // },
-    // created() {
-    //     this.getMessage();
-    // },
+    //     }}, 
+        // created() {
+        //     this.createUser();
+        // },
 };
 </script>
 

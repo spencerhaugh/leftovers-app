@@ -3,7 +3,7 @@
         <form>
             <label for="username" />
                 <input type="text" id="username" placeholder="Username">
-            <label for="email" />
+            <label for="password" />
                 <input type="password" id="password" placeholder="Password">
             <button type='submit' class='btn btn-outline-danger'>Login</button>
         </form>
@@ -23,7 +23,9 @@ export default {
     },
     data() {
         return {
-            text: "Need an account? Sign up for free!"
+            text: "Need an account? Sign up for free!",
+            username: '',
+            password: ''
         };
     },
     methods: {
