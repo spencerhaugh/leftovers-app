@@ -9,6 +9,10 @@ const User = require('../models/user.js')
 
 //CRUD ROUTES
 
+// ============
+// USERS
+// ============
+
 // Get Indivdual User
 users.get('/:id', (req, res) => {
   console.log("Finding user...")
@@ -54,7 +58,8 @@ users.put('/:id', (req, res) => {
         if (err) {
           res.status(400).json({ error: err.message })
         } else {
-          res.status(200).json({ user: updatedUser })
+          updatedUser.password = ''
+          res.status(200).json(updatedUser)
         }
       })
     }
@@ -76,6 +81,11 @@ users.delete('/:id', (req, res) => {
     }
   })
 })
+
+// ===========
+// RECIPES
+// ===========
+
 
 
 

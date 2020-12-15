@@ -1,7 +1,12 @@
-// const axios = require('axios')
+// Dependencies
+const express = require('express')
+const mongoose = require('mongoose')
+const users = express.Router()
+const User = require('../models/user.js')
+const axios = require('axios')
 
 
-// module.exports = recipe_api
+
 
 // require('dotenv').config()
 const baseURL = 'https://api.spoonacular.com/recipes/findByIngredients?ingredients='
@@ -15,6 +20,9 @@ console.log(queryURL)
 
 
 
+
+
+// module.exports = recipe_api
 
 // example url (working in browser)
 // https://api.spoonacular.com/recipes/findByIngredients?ingredients=corn&apiKey=e30a8201eca9495785674b0937477c7f
