@@ -7,7 +7,7 @@
       </div>
       <div v-else class="logo">
         <Logo  />
-        <Ingredient v-on:new-search="findRecipes" />
+        <Ingredient v-on:new-search="findRecipes" v-on:click="show = !show"/>
       </div>
     
     <p class="tagline">
@@ -33,7 +33,8 @@ export default {
     data() {
       return {
         recipes: [],
-        favorites: []
+        favorites: [],
+        show: true
       }
     },
     methods: {

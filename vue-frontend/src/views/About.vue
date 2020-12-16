@@ -5,7 +5,7 @@
   
     <div class='about-text about'>
       <p>In need of a meal, but out of ideas? Let us spice things up!</p>
-      <p>LEFTOVERS works with what you have on hand, and provides meal ideas you can actually work with.</p>
+      <p>HANGRY works with what you have on hand, and provides meal ideas you can actually work with.</p>
       <p>Just tell us you main ingredient, and we'll give you dozens of ideas! Favorite the ones you love, and ditch the ones you aren't feeling. Circle back to your favorites in your profile page. Easy as that!</p>
     </div>
     <div>
