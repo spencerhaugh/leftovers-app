@@ -1,6 +1,6 @@
 <template>
     <div class='container'>
-        <form class='signup-form' @submit="createUser">
+        <form class='signup-form' @submit.prevent="createUser">
             <label for="username" />
                 <input type="text" v-model="username" id="username" placeholder="Username">
             <label for="email" />
@@ -16,6 +16,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 
 export default {
     name: 'Signup',
@@ -30,20 +31,19 @@ export default {
             email: ''
         }
     },
-    // methods: {
-    //     createUser() {
-    //         axios.post()
-    //         .then((res) => {
-    //             this.msg = res.data;
-    //         })
-    //         .catch((error) => {
-    //             console.error(error);
-    //         });
-    //     }}, 
-        // created() {
-        //     this.createUser();
-        // },
-};
+    methods: {
+        createUser() {
+        const path = 'http://localhost:3003/users/signup';
+            axios.get(path)
+            .then((res) => {
+                this.msg = res.data;
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+        }
+    }
+}
 </script>
 
 <style scoped>

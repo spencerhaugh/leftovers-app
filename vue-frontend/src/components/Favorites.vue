@@ -1,6 +1,9 @@
 <template>
     <div>
-
+        <!-- <div v-bind:key="fav._id" v-for="fav in favorites">
+            <h3>{{fav.title}}</h3> -->
+        <!-- </div> -->
+    
     </div>
 </template>
 
@@ -11,7 +14,8 @@
 
 <script>
 export default {
-    name: "Favorites"
+    name: "Favorites",
+    props: ["favorites"]
 }
 </script>
 

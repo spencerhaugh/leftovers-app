@@ -11,31 +11,10 @@
 </template>
 
 <script>
-import axios from 'axios'
 
 
 export default {
-    name: "App",
-    data() {
-      return {
-      recipes: [],
-      favorites: []
-      }
-    },
-    methods: {
-      addFavorite(newFavorite) {
-        const newFav = newFavorite
-        this.favorites = [...this.favorites, newFav]
-      }
-    },
-    created() {
-      const apiKey = process.env.VUE_APP_API_KEY
-      const ingredient = "potato"
-      let searchURL = `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${ingredient}&apiKey=${apiKey}&number=10`
-      axios.get(searchURL)
-      .then(res => this.recipes = res.data)
-      .catch(err => console.log(err));
-    }
+    name: "App"
 }
 </script>
 

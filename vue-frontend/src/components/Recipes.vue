@@ -1,6 +1,9 @@
 <template>
-    <div>
-
+    <div class="recipe-option">
+        <h2>{{recipes[count].title}} PLACEHOLDER </h2>
+        <button v-on:click="addFavorite" class='btn btn-primary btn-lg'>YASS</button>
+        <button v-on:click="count +=1" class='btn btn-primary btn-lg'>YUCK</button>
+        <!-- <img src={{recipe.image}} alt={{recipe.title}}> -->
     </div>
 </template>
 
@@ -11,13 +14,33 @@
 
 
 <script>
+let count = 0
+
+
 export default {
-    name: "Recipes"
-}
+    name: "Recipes",
+    props: {
+        recipes: Array
+    },
+    data() {
+        // favorites: []
+    },
+    methods: {
+      addFavorite() {
+        const newFav = this.recipes[count]
+        this.favorites = [...this.favorites, newFav]
+        count +=1
+      }
+    }
+    }
 </script>
 
 
 
 <style scoped>
-
+    .recipe-option {
+        width: 40%;
+        background-color: cadetblue;
+        color: cornsilk;
+    }
 </style>
