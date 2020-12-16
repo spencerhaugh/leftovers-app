@@ -7,8 +7,9 @@
       </div>
       <div v-else class="logo">
         <Logo  />
+        <Ingredient v-on:new-search="findRecipes" />
       </div>
-    <Ingredient v-on:new-search="findRecipes" />
+    
     <p class="tagline">
       Matching hangry people with great meals since 2020!
     </p>

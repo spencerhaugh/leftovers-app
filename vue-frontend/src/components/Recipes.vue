@@ -1,8 +1,16 @@
 <template>
     <div class="recipe-option">
-        <h2>{{recipes[count].title}} PLACEHOLDER </h2>
-        <button v-on:click="addFavorite" class='btn btn-primary btn-lg'>YASS</button>
-        <button v-on:click="count +=1" class='btn btn-primary btn-lg'>YUCK</button>
+        <h2>{{ recipes[0].title }}</h2>
+        <p>Recipe Image here</p>
+        <!-- {{ image }} -->
+        <p>Recipe details here</p>
+        <p> Also needed:</p>
+        <!-- <p {{ recipes[0].missedIngredients[0].original }}></p> -->
+        <!-- <h2>{{recipes[count].title}} PLACEHOLDER </h2> -->
+        <div class="selectors">
+            <button v-on:click="addFavorite" class='btn btn-success btn-lg'>YASS!</button>
+            <button v-on:click="count +=1" class='btn btn-danger btn-lg'>YUCK!</button> 
+        </div>
         <!-- <img src={{recipe.image}} alt={{recipe.title}}> -->
     </div>
 </template>
@@ -16,14 +24,15 @@
 <script>
 let count = 0
 
-
 export default {
     name: "Recipes",
     props: {
-        recipes: Array
+        recipes: Array,
     },
     data() {
-        // favorites: []
+        return {
+            favorites: []
+        }
     },
     methods: {
       addFavorite() {
@@ -42,5 +51,13 @@ export default {
         width: 40%;
         background-color: cadetblue;
         color: cornsilk;
+        margin: 1% auto;
+        padding: 2%;
+        border-radius: 10px;
+    }
+    .selectors {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
     }
 </style>

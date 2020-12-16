@@ -3,7 +3,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
 
-// const cors = require('cors');
+const cors = require('cors');
 
 // Config
 require('dotenv').config();
@@ -11,17 +11,17 @@ const PORT = process.env.PORT
 const MONGODB_URI = process.env.MONGODB_URI 
 
 
-// const whitelist = ['http://localhost:3003', 'http://localhost:8080']
-// const corsOptions = {
-//     origin: function (origin, callback) {
-//         if (whitelist.includes(origin)) {
-//             callback(null, true)
-//         } else {
-//             callback(new Error('Not allowed by CORS'))
-//         }
-//     }
-// }
-// app.use(cors(corsOptions))
+const whitelist = ['http://localhost:3003', 'http://localhost:8080']
+const corsOptions = {
+    origin: function (origin, callback) {
+        if (whitelist.includes(origin)) {
+            callback(null, true)
+        } else {
+            callback(new Error('Not allowed by CORS'))
+        }
+    }
+}
+app.use(cors(corsOptions))
 
 
 // Middleware
