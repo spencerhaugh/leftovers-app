@@ -1,17 +1,19 @@
 <template>
     <div class="recipe-option">
-        <h2>{{ recipes[0].title }}</h2>
-        <p>Recipe Image here</p>
-        <!-- {{ image }} -->
-        <p>Recipe details here</p>
-        <p> Also needed:</p>
-        <!-- <p {{ recipes[0].missedIngredients[0].original }}></p> -->
-        <!-- <h2>{{recipes[count].title}} PLACEHOLDER </h2> -->
+        <h2>{{ recipes.recipes[0].title }}</h2>
+        <p>image goes here</p>
+        <!-- {{ recipe.recipe[0].image }} -->
+        {{ recipes.recipes[0].summary }}
+        <h5>Ready in {{ recipes.recipes[0].readyInMinutes }} minutes!</h5>
+        <h5>Vegetarian: {{ recipes.recipes[0].vegetarian }}</h5>
+        <h5>Vegan: {{ recipes.recipes[0].vegan }}</h5>
+        <h5>Popular: {{ recipes.recipes[0].veryPopular }}</h5>
+        
         <div class="selectors">
-            <button v-on:click="addFavorite" class='btn btn-success btn-lg'>YASS!</button>
-            <button v-on:click="count +=1" class='btn btn-danger btn-lg'>YUCK!</button> 
+            <!-- REMOVED TEMPORARILY  -->
+            <!-- <button v-on:click="addFavorite" class='btn btn-success btn-lg'>YASS!</button> -->
+            <!-- <button v-on:click="count +=1" class='btn btn-danger btn-lg'>YUCK!</button>  -->
         </div>
-        <!-- <img src={{recipe.image}} alt={{recipe.title}}> -->
     </div>
 </template>
 
@@ -23,14 +25,13 @@
 
 <script>
 let count = 0
-
 // This resource was very helpful in figuring out passing in the recipe array data from App.vue:
 // https://blog.logrocket.com/how-to-use-props-to-pass-data-to-child-components/
 
 export default {
     name: "Recipes",
     props: {
-        recipes: Array,
+        recipes: {},
     },
     data() {
         return {

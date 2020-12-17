@@ -1,7 +1,6 @@
 <template>
     <div class='ingredient'>
         <h4>Enter a main ingredient, get meal suggestions</h4>
-        <!-- <h5>Enter a main ingredient, get suggestions</h5> -->
         <form @submit.prevent="newSearch">
             <input type="text" v-model="query" name="param" placeholder="What have you got?">
             <input type="submit" value="Submit">
@@ -10,6 +9,9 @@
 </template>
 
 <script>
+
+// This resource was very helpful in figuring out passing in the recipe array data from App.vue:
+// https://blog.logrocket.com/how-to-use-props-to-pass-data-to-child-components/
 
 export default {
     name: "Ingredient",

@@ -2,12 +2,16 @@
   <div class="home">
     <h1>HANGRY!</h1>
     <h2>When you need meal ideas, NOW.</h2>
-      <div v-if="recipes.length > 1" class="recipe">
-        <Recipes v-bind:recipes="recipes" />
+      <!-- <div v-if="recipes.length > 0" class="recipe"> -->
+      <div class="recipe">
+        <!-- <Recipes v-bind:recipes="recipes" /> -->
       </div>
-      <div v-else class="logo">
+      <!-- <div v-else class="logo"> -->
+      <div class="logo">
         <Logo  />
-        <Ingredient v-on:new-search="findRecipes" v-on:click="show = !show"/>
+        <Random v-on:random-search="findRandom" />
+        <Recipes v-bind:recipes="recipes" />
+        <!-- <Ingredient v-on:new-search="findRecipes" />  Temporary removal of ingredient based API search -->
       </div>
     
     <p class="tagline">
@@ -21,14 +25,16 @@ import axios from 'axios'
 // @ is an alias to /src
 import Logo from '@/components/Logo.vue'
 import Recipes from '@/components/Recipes.vue'
-import Ingredient from '@/components/Ingredient.vue'
+// import Ingredient from '@/components/Ingredient.vue'
+import Random from '@/components/Random.vue'
 
 export default {
   name: 'Home',
   components: {
     Logo,
     Recipes,
-    Ingredient
+    // Ingredient,
+    Random,
     },
     data() {
       return {
@@ -45,6 +51,7 @@ export default {
       findRecipes(param) {
             console.log("Got to the findRecipes Function!")
             console.log("undefined? ", param.query)
+            this.recipes = []
 
             const apiKey = process.env.VUE_APP_API_KEY
             const ingredient = param.query
@@ -52,7 +59,16 @@ export default {
             axios.get(searchURL)
             .then(res => this.recipes = res.data)
             .catch(err => console.log(err));
-        }
+        },
+      findRandom() {
+        console.log("Finding random...")
+        this.recipes = []
+        // UPDATED TO SINGLE RANDOM RECIPE API CALL. Leaving above function for future enhancement
+        const apiKey = process.env.VUE_APP_API_KEY
+        axios.get(`https://api.spoonacular.com/recipes/random?apiKey=${apiKey}&number=1`)
+            .then(res => this.recipes = res.data)
+            .catch(err => console.log(err));
+      }
     } 
 }
 </script>
