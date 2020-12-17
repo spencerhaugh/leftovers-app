@@ -24,6 +24,9 @@
 <script>
 let count = 0
 
+// This resource was very helpful in figuring out passing in the recipe array data from App.vue:
+// https://blog.logrocket.com/how-to-use-props-to-pass-data-to-child-components/
+
 export default {
     name: "Recipes",
     props: {
