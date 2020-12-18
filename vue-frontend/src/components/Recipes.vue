@@ -4,9 +4,10 @@
         <p>image goes here</p>
         <!-- {{ recipe.recipe[0].image }} -->
         {{ recipes.recipes[0].summary }}
-        <h5>Ready in {{ recipes.recipes[0].readyInMinutes }} minutes!</h5>
+        <!-- <h5>Ready in {{ recipes.recipes[0].readyInMinutes }} minutes!</h5> -->
+        <h5>Cook time: {{ recipes.recipes[0].cookingMinutes }}</h5>
+        <h5>Prep time: {{ recipes.recipes[0].preperationMinutes }}</h5>
         <h5>Vegetarian: {{ recipes.recipes[0].vegetarian }}</h5>
-        <h5>Vegan: {{ recipes.recipes[0].vegan }}</h5>
         <h5>Popular: {{ recipes.recipes[0].veryPopular }}</h5>
         
         <div class="selectors">
