@@ -1,15 +1,16 @@
 <template>
     <div class="recipe-option">
+        <h3>How about some...</h3>
         <h2>{{ recipes.recipes[0].title }}</h2>
         <p>image goes here</p>
         <!-- {{ recipe.recipe[0].image }} -->
         {{ recipes.recipes[0].summary }}
-        <!-- <h5>Ready in {{ recipes.recipes[0].readyInMinutes }} minutes!</h5> -->
-        <h5>Cook time: {{ recipes.recipes[0].cookingMinutes }}</h5>
-        <h5>Prep time: {{ recipes.recipes[0].preperationMinutes }}</h5>
-        <h5>Vegetarian: {{ recipes.recipes[0].vegetarian }}</h5>
-        <h5>Popular: {{ recipes.recipes[0].veryPopular }}</h5>
-        
+        <div class="details">
+            <h5>Ready in {{ recipes.recipes[0].readyInMinutes }} minutes!</h5>
+            <h5>Vegetarian: {{ recipes.recipes[0].vegetarian }}</h5>
+            <h5>WW Smart Points: {{ recipes.recipes[0].weightWatcherSmartPoints }}</h5>
+            <!-- <a href="{{recipe.recipe[0].sourceUrl}}"><button class="recipe-link">Get the recipe</button></a> -->
+        </div>
         <div class="selectors">
             <!-- REMOVED TEMPORARILY  -->
             <!-- <button v-on:click="addFavorite" class='btn btn-success btn-lg'>YASS!</button> -->
@@ -64,5 +65,11 @@ export default {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+    }
+    .details {
+        margin-top: 2%;
+    }
+    h3 {
+        color: rgb(204, 37, 37)
     }
 </style>
