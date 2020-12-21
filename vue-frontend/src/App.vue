@@ -51,7 +51,7 @@ export default {
 #nav a.router-link-exact-active {
   color: red;
 }
-@media (max-width: 400px) {
+@media (max-width: 550px) {
   h1 {
     font-size: 3rem;
   }
