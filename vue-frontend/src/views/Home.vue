@@ -74,13 +74,18 @@ export default {
 </script>
 
 <style scoped>
+  h1 {
+    margin-top: 3%;
+    font-family: Dagsen_Inked, Helvetica, Arial;
+    font-size: 5rem;
+  }
+  h2 {
+    font-family: big_noodle_titling, Helvetica, Arial;
+  }
+  /* Font import tips researched from https://reactgo.com/add-fonts-vue-app/ */
+  @media (max-width: 580px) {
     h1 {
-      margin-top: 3%;
-      font-family: Dagsen_Inked, Helvetica, Arial;
-      font-size: 5rem;
+      font-size: 3rem;
     }
-    h2 {
-      font-family: big_noodle_titling, Helvetica, Arial;
-    }
-    /* Font import tips researched from https://reactgo.com/add-fonts-vue-app/ */
+  }
 </style>
