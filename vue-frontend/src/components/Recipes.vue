@@ -2,10 +2,12 @@
     <div class="recipe-option">
         <h3>How about some...</h3>
         <h2>{{ recipes.recipes[0].title }}</h2>
-        <p>image goes here</p>
-        <!-- Cannot get the v-html directive to display the raw HTML from the API as HTML... Working on a solution -->
-        {{ recipes.recipes[0].summary }}
-        <!-- {{ recipes.recipes[0].instructions }} -->
+        <div class="recipeImage">
+            <span id="image" v-html="recipeImage"></span>
+        </div>
+        <div class="recipeSummary">
+            <span id="summary" v-html="recipeSummary"></span>
+        </div>
         <div class="details">
             <h5>Ready in {{ recipes.recipes[0].readyInMinutes }} minutes!</h5>
             <h5>Vegetarian: {{ recipes.recipes[0].vegetarian }}</h5>
@@ -30,10 +32,6 @@
 
 <script>
 let count = 0
-// let apiSummary = this.recipes.recipes[0].summary
-// let img = this.props.recipes.recipes[0].image
-// let imgSrc = "<img src=" + `${img}` + "/>"
-// Attempting and failing to get the img http address from the API to render above... working on this.
 
 // This resource was very helpful in figuring out passing in the recipe array data from App.vue:
 // https://blog.logrocket.com/how-to-use-props-to-pass-data-to-child-components/
@@ -48,6 +46,15 @@ export default {
     data() {
         return {
             favorites: []
+        }
+    },
+    computed: {
+        recipeSummary: function() {
+            return this.recipes.recipes[0].summary
+        },
+        recipeImage: function() {
+            let image = "<img class='recipePhoto' src='" + this.recipes.recipes[0].image + "'>"
+            return image
         }
     },
     methods: {
@@ -81,6 +88,13 @@ export default {
     }
     h3 {
         color: rgb(204, 37, 37)
+    }
+    .recipeImage {
+        width: 80%;
+        margin: auto;
+    }
+    .recipeSummary {
+        margin-top: 2%;
     }
     @media (max-width: 580px) {
       .recipe-option {
