@@ -63,5 +63,6 @@ export default {
 .recipeImage img {
     width: 80%;
     margin: auto;
+    border-radius: 10px;
 }
 </style>
