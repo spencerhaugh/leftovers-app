@@ -51,4 +51,17 @@ export default {
 #nav a.router-link-exact-active {
   color: red;
 }
+
+.details button {
+  padding: 10px;
+  border: none;
+  background-color: green;
+  color: white;
+  border-radius: 10px;
+}
+
+.recipeImage img {
+    width: 80%;
+    margin: auto;
+}
 </style>

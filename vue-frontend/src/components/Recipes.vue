@@ -13,7 +13,9 @@
             <h5>Vegetarian: {{ recipes.recipes[0].vegetarian }}</h5>
             <h5>WW Smart Points: {{ recipes.recipes[0].weightWatcherSmartPoints }}</h5>
             <h5>Gluten Free: {{ recipes.recipes[0].glutenFree }}</h5>
-            <!-- <a href="{{recipe.recipe[0].sourceUrl}}"><button class="recipe-link">Get the recipe</button></a> -->
+            <div v-html="recipeHowTo">
+                
+            </div>
         </div>
         <div class="selectors">
             <!-- FAVORITE/NEXT BUTTONS REMOVED TEMPORARILY  -->
@@ -55,6 +57,10 @@ export default {
         recipeImage: function() {
             let image = "<img class='recipePhoto' src='" + this.recipes.recipes[0].image + "'>"
             return image
+        },
+        recipeHowTo: function() {
+            let howToLink = "<a href='" + this.recipes.recipes[0].sourceUrl + "'><button class='recipe-link'>Get the recipe</button></a>"
+            return howToLink
         }
     },
     methods: {
